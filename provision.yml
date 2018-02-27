@@ -1,0 +1,10 @@
+---
+- hosts: all
+  remote_user: ec2-user
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: echo hello
+      shell: echo "hello"
+    - name: Create a file in tmp called testfile.txt with the content hello world
+      copy: content="hello world\n" dest=/tmp/testfile.txt
