@@ -16,3 +16,17 @@ variable "private_subnet_cidr" {
 variable "key_path" {
   description = "Path to the private portion of the SSH key specified."
 }
+
+variable "key_pub_path" {
+  description = "Path to the public portion of the SSH key specified."
+}
+
+variable "key_name" {
+  description = "A name for the SSH key specified."
+  default     = "rsa-terraform-test-key"
+}
+
+variable "aws_region" {
+  description = "AWS region."
+  default     = "us-east-1"
+}

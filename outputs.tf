@@ -13,7 +13,7 @@ resource "local_file" "group_vars_all" {
 }
 
 resource "local_file" "flat_inventory" {
-  content  = "${aws_instance.server01.private_dns}"
+  content  = "${aws_instance.server01.private_dns}  ansible_ssh_user=${aws_instance.server01.tags["sshUser"]}"
   filename = "${path.module}/flat_inventory"
 }
 
